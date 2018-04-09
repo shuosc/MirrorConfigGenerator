@@ -7,5 +7,6 @@ module.exports = app => {
   const controller = app.controller;
   const router = app.router;
   router.get('/', controller.index.index);
-  require('./router/ubuntu')(app);
+  require('./router/ubuntu')(app); // ubuntu router
+  require('./router/centos')(app); // centos router
 };

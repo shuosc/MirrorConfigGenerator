@@ -36,7 +36,15 @@ $ yarn stop
 # Help:
 $ curl "http://localhost:7001"
 # Ubuntu:
-$ curl "http://localhost:7001/ubuntu?ip=ipv4&version=16.04" | sudo tee /etc/apt/source.list
+# Default: {ip} = ipv4 {version} = 16.04
+$ curl "http://localhost:7001/ubuntu?ip={ip}&version={version}" | sudo tee /etc/apt/source.list
+$ sudo apt-get update
+$ sudo apt-get upgrade
+# CentOS
+# Default: {ip} = ipv4 {version} = 7
+$ curl "http://localhost:7001/centos?ip={ip}&version={version}" | sudo tee /etc/yum.repos.d/CentOS-Base.repo
+$ sudo yum clean all
+$ sudo yum makecache
 ```
 
 ### Screenshot
