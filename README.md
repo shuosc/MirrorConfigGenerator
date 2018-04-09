@@ -33,10 +33,13 @@ $ yarn stop
 ### Usage
 
 ```bash
+# Help:
+$ curl "http://localhost:7001"
 # Ubuntu:
-curl "http://localhost:7001/ubuntu?ip=ipv4&version=16.04" | sudo tee /etc/apt/source.list
+$ curl "http://localhost:7001/ubuntu?ip=ipv4&version=16.04" | sudo tee /etc/apt/source.list
 ```
 
 ### Screenshot
 
+![](app/public/screenshot0.png)
 ![](app/public/screenshot1.png)

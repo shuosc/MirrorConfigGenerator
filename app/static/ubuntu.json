@@ -38,6 +38,51 @@
     }, {
         "version": "12.04",
         "name": "precise"
+    }, {
+        "version": "11.10",
+        "name": "oneiric"
+    }, {
+        "version": "11.04",
+        "name": "natty"
+    }, {
+        "version": "10.10",
+        "name": "maverick"
+    }, {
+        "version": "10.04",
+        "name": "lucid"
+    }, {
+        "version": "9.10",
+        "name": "karmic"
+    }, {
+        "version": "9.04",
+        "name": "jaunty"
+    }, {
+        "version": "8.10",
+        "name": "intrepid"
+    }, {
+        "version": "8.04",
+        "name": "hardy"
+    }, {
+        "version": "7.10",
+        "name": "gutsy"
+    }, {
+        "version": "7.04",
+        "name": "feisty"
+    }, {
+        "version": "6.10",
+        "name": "edgy"
+    }, {
+        "version": "6.06",
+        "name": "dapper"
+    }, {
+        "version": "5.10",
+        "name": "breezy"
+    }, {
+        "version": "5.04",
+        "name": "hoary"
+    }, {
+        "version": "4.10",
+        "name": "warty"
     }],
     "config": "deb https://{domain}/ubuntu/ {version} main restricted universe multiverse\n# deb-src http://cn.archive.ubuntu.com/ubuntu/ {version} main restricted universe multiverse\ndeb https://{domain}/ubuntu/ {version}-updates main restricted universe multiverse\n# deb-src http://cn.archive.ubuntu.com/ubuntu/ {version}-updates main restricted universe multiverse\ndeb https://{domain}/ubuntu/ {version}-backports main restricted universe multiverse\n# deb-src http://cn.archive.ubuntu.com/ubuntu/ {version}-backports main restricted universe multiverse\ndeb https://{domain}/ubuntu/ {version}-security main restricted universe multiverse\n# deb-src http://cn.archive.ubuntu.com/ubuntu/ {version}-security main restricted universe multiverse\n# Not recommended\n# deb https://{domain}/ubuntu/ {version}-proposed main restricted universe multiverse\n# deb-src http://cn.archive.ubuntu.com/ubuntu/ {version}-proposed main restricted universe multiverse\n"
 }
