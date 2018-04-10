@@ -7,7 +7,8 @@ module.exports = app => {
   const controller = app.controller;
   const router = app.router;
   router.get('/', controller.index.index);
-  require('./router/ubuntu')(app); // ubuntu router
-  require('./router/centos')(app); // centos router
-  require('./router/arch')(app);
+  router.get('/ubuntu', controller.ubuntu.getConfig);
+  router.get('/centos', controller.centos.getConfig);
+  router.get('/debian', controller.debian.getConfig);
+  router.get('/archlinux', controller.arch.getConfig);
 };

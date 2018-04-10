@@ -33,9 +33,9 @@ $ yarn stop
 ### Usage
 
 ```bash
-# Help:
+# Help
 $ curl "http://localhost:7001"
-# Ubuntu:
+# Ubuntu
 # Default: {ip} = ipv4 {version} = 16.04
 $ cp /etc/apt/sources.list /etc/apt/sources.list.backup
 $ curl "http://localhost:7001/ubuntu?ip={ip}&version={version}" | sudo tee /etc/apt/source.list
