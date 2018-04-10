@@ -3,5 +3,5 @@
 module.exports = app => {
   const controller = app.controller;
   const router = app.router;
-  router.get('/centos', controller.centos.getConfig);
+  router.get('/archlinux', controller.arch.getConfig);
 };

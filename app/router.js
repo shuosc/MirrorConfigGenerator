@@ -9,4 +9,5 @@ module.exports = app => {
   router.get('/', controller.index.index);
   require('./router/ubuntu')(app); // ubuntu router
   require('./router/centos')(app); // centos router
+  require('./router/arch')(app);
 };

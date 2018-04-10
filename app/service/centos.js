@@ -2,6 +2,7 @@
 const Service = require('egg').Service;
 
 class CentOSService extends Service {
+
   async generateConfig(ip, version) {
     const centos = require('../static/centos.json');
     const centosVersions = centos.versions;
@@ -15,6 +16,7 @@ class CentOSService extends Service {
     config = config.replace(/{domain}/g, domain);
     return config;
   }
+
 }
 
 module.exports = CentOSService;
