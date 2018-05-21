@@ -12,6 +12,9 @@ WORKDIR /usr/src/app
 # add npm package
 COPY package.json /usr/src/app/package.json
 
+ENV NODE_ENV=production \
+    EGG_SERVER_ENV=prod
+
 RUN npm i --registry=https://registry.npm.taobao.org --production
 
 # copy code
