@@ -1,5 +1,8 @@
 {
     "versions": [{
+        "version": "18.10",
+        "name": "cosmic"
+    }, {
         "version": "18.04",
         "name": "bionic"
     }, {
