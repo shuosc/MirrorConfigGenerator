@@ -1,3 +1,0 @@
-{
-    "config": "Server = https://{domain}/archlinux/$repo/os/$arch\n"
-}

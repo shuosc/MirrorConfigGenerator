@@ -1,4 +1,6 @@
-FROM node:8.6.0-alpine
+FROM node:10-alpine
+
+LABEL maintainer="AdrianDuan <adrianDuan@icloud.com> zhonger <zhonger@live.cn>"
 
 RUN apk --update add tzdata \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
@@ -22,4 +24,6 @@ COPY . /usr/src/app
 
 EXPOSE 7001
 
-CMD npm start
+VOLUME [ "/public/data" ]
+
+CMD ["/usr/src/app/entrypoint.sh"]

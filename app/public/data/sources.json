@@ -1,0 +1,84 @@
+{
+    "baseUrl": "http://127.0.0.1:7001/repos/",
+    "domain4": "mirrors.shu.edu.cn",
+    "domain6": "mirrors.shu6.edu.cn",
+    "isos": [
+        {
+            "value": "ubuntu",
+            "label": "Ubuntu",
+            "config": "deb https://{domain}/ubuntu/ {version} main restricted universe multiverse\ndeb-src http://{domain}/ubuntu/ {version} main restricted universe multiverse\ndeb https://{domain}/ubuntu/ {version}-updates main restricted universe multiverse\ndeb-src http://{domain}/ubuntu/ {version}-updates main restricted universe multiverse\ndeb https://{domain}/ubuntu/ {version}-backports main restricted universe multiverse\ndeb-src http://{domain}/ubuntu/ {version}-backports main restricted universe multiverse\ndeb https://{domain}/ubuntu/ {version}-security main restricted universe multiverse\ndeb-src http://{domain}/ubuntu/ {version}-security main restricted universe multiverse\n# Not recommended\n# deb https://{domain}/ubuntu/ {version}-proposed main restricted universe multiverse\n# deb-src http://{domain}/ubuntu/ {version}-proposed main restricted universe multiverse\n",
+            "children": [
+                {
+                    "value": "18.10",
+                    "label": "Cosmic",
+                    "version": "cosmic"
+                },{
+                    "value": "18.04",
+                    "label": "Bionic",
+                    "version": "bionic"
+                },{
+                    "value": "17.10",
+                    "label": "Artful",
+                    "version": "artful"
+                },{
+                    "value": "16.04",
+                    "label": "Xenial",
+                    "version": "xenial"
+                },{
+                    "value": "14.04",
+                    "label": "Trusty",
+                    "version": "trusty"
+                },{
+                    "value": "12.04",
+                    "label": "Precise",
+                    "version": "precise"
+                }
+            ]
+        },{
+            "value": "centos",
+            "label": "CentOS",
+            "config": "[base]\nname=CentOS-$releasever - Base\n#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os\nbaseurl=https://{domain}/centos/$releasever/os/$basearch/\ngpgcheck=1\ngpgkey=https://{domain}/centos/RPM-GPG-KEY-CentOS-{version}\n#released updates\n[updates]\nname=CentOS-$releasever - Updates\n# mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates\nbaseurl=https://{domain}/centos/$releasever/updates/$basearch/\ngpgcheck=1\ngpgkey=https://{domain}/centos/RPM-GPG-KEY-CentOS-{version}\n#additional packages that may be useful\n[extras]\nname=CentOS-$releasever - Extras\n# mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras\nbaseurl=https://{domain}/centos/$releasever/extras/$basearch/\ngpgcheck=1\ngpgkey=https://{domain}/centos/RPM-GPG-KEY-CentOS-{version}\n#additional packages that extend functionality of existing packages\n[centosplus]\nname=CentOS-$releasever - Plus\n# mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus\nbaseurl=https://{domain}/centos/$releasever/centosplus/$basearch/\ngpgcheck=1\nenabled=0\ngpgkey=https://{domain}/centos/RPM-GPG-KEY-CentOS-{version}\n",
+            "children": [
+                {
+                    "value": "7",
+                    "label": "CentOS 7",
+                    "version": "7"
+                },{
+                    "value": "6",
+                    "label": "CentOS 6",
+                    "version": "6"
+                }
+            ]
+        },{
+            "value": "debian",
+            "label": "Debian",
+            "config": "deb https://{domain}/debian/ {version} main contrib non-free\ndeb-src https://{domain}/debian/ {version} main contrib non-free\ndeb https://{domain}/debian/ {version}-updates main contrib non-free\ndeb-src https://{domain}/debian/ {version}-updates main contrib non-free\ndeb https://{domain}/debian/ {version}-backports main contrib non-free\ndeb-src https://{domain}/debian/ {version}-backports main contrib non-free\ndeb https://{domain}/debian-security/ {version}/updates main contrib non-free\ndeb-src https://{domain}/debian-security/ {version}/updates main contrib non-free\n",
+            "children": [
+                {
+                    "value": "stretch",
+                    "label": "Stretch",
+                    "version": "stretch"
+                },{
+                    "value": "jessie",
+                    "label": "Jessie",
+                    "version": "jessie"
+                },{
+                    "value": "wheezy",
+                    "label": "Wheezy",
+                    "version": "wheezy"
+                }
+            ]
+        },{
+            "value": "archlinux",
+            "label": "Archlinux",
+            "config": "Server = https://{domain}/archlinux/$repo/os/$arch",
+            "children": [
+                {
+                    "value": "",
+                    "label": "",
+                    "version": ""
+                }
+            ]
+        }
+    ]
+}
