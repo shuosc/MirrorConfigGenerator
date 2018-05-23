@@ -52,8 +52,3 @@ $ sudo apt-get update
 $ curl "http://mirrors.shu.edu.cn/repos/archlinux?ip={ip}" | sudo tee /etc/pacman.d/mirrorlist
 $ pacman -Syyu
 ```
-
-### Screenshot
-
-![](app/public/screenshot0.png)
-![](app/public/screenshot1.png)
