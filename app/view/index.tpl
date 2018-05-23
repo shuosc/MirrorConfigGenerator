@@ -122,7 +122,6 @@
         var generator = new Vue({
             el: '#generator',
             data: {
-                selectedOptions: [],
                 linux: '',
                 version: '',
                 releases: '',
@@ -130,9 +129,8 @@
                 baseUrl: '',
                 url: '',
                 oneurl: '',
-                download: false,
+                shell: '',
                 isos: [],
-                centerDialogVisible: false
             },
             created: function() {
                 this.loadIsos();
@@ -153,7 +151,8 @@
                     for(var item of this.isos) {
                         if(item.value == this.linux){
                             this.releases = item.children;
-                            this.version = '';			
+                            this.version = '';
+							this.shell = item.shell;
                         }		
                     }
                     document.getElementsByClassName('el-input__inner')[1].value = '';
@@ -227,15 +226,8 @@
                                 this.oneurl += "&&ip=" + this.ip;
                             }
                         }
-                        if(this.linux == 'ubuntu'){
-                            this.oneurl += ' | sudo tee /etc/apt/sources.list';
-                        }else if(this.linux == 'centos'){
-                            this.oneurl += ' | sudo tee /etc/yum.repos.d/CentOS-Base.repo';
-                        }else if(this.linux == 'debian'){
-                            this.oneurl += ' | sudo tee /etc/apt/sources.list';
-                        }else if(this.linux == 'archlinux'){
-                            this.oneurl += ' | sudo tee /etc/pacman.d/mirrorlist';
-                        }
+						this.oneurl += " | ";
+						this.oneurl += this.shell;
                     }
                     return this.oneurl;
                 }

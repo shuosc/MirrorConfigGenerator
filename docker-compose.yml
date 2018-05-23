@@ -1,0 +1,9 @@
+version: "2"
+services:
+   config:
+     image: shuosc/config:latest
+     ports:
+       - "7001:7001"
+     volumes:
+       - /public/data/:/public/data
+     restart: always
