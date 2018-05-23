@@ -34,26 +34,22 @@ $ yarn stop
 
 ```bash
 # Help
-$ curl "http://localhost:7001"
+$ curl "http://mirrors.shu.edu.cn/repos"
 # Ubuntu
-# Default: {ip} = ipv4 {version} = 16.04
 $ cp /etc/apt/sources.list /etc/apt/sources.list.backup
-$ curl "http://localhost:7001/ubuntu?ip={ip}&version={version}" | sudo tee /etc/apt/source.list
+$ curl "http://mirrors.shu.edu.cn/repos/ubuntu?ip={ip}&version={version}" | sudo tee /etc/apt/source.list
 $ sudo apt-get update
 # CentOS
-# Default: {ip} = ipv4 {version} = 7
 $ cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-$ curl "http://localhost:7001/centos?ip={ip}&version={version}" | sudo tee /etc/yum.repos.d/CentOS-Base.repo
+$ curl "http://mirrors.shu.edu.cn/repos/centos?ip={ip}&version={version}" | sudo tee /etc/yum.repos.d/CentOS-Base.repo
 $ sudo yum clean all
 $ sudo yum makecache
 # Debian
-# Default: {ip} = ipv4 {version} = stretch
 $ cp /etc/apt/sources.list /etc/apt/sources.list.backup
-$ curl "http://localhost:7001/debian?ip={ip}&version={version}" | sudo tee /etc/apt/sources.list
+$ curl "http://mirrors.shu.edu.cn/repos/debian?ip={ip}&version={version}" | sudo tee /etc/apt/sources.list
 $ sudo apt-get update
 # Arch Linux
-# Default: {ip} = ipv4
-$ curl "http://localhost:7001/archlinux?ip={ip}" | sudo tee /etc/pacman.d/mirrorlist
+$ curl "http://mirrors.shu.edu.cn/repos/archlinux?ip={ip}" | sudo tee /etc/pacman.d/mirrorlist
 $ pacman -Syyu
 ```
 

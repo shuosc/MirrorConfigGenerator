@@ -9,8 +9,8 @@ class ArchController extends Controller {
       ip: [ 'ipv4', 'ipv6' ],
     };
     let ip = this.ctx.query.ip;
-    ip = (!ip) ? 'ipv4' : ip;
-    this.ctx.body = 'archLinux';
+    const defaultIP = this.app.config.mirror.ip;
+    ip = (!ip) ? defaultIP : ip;
     this.ctx.validate(validateRule, {
       ip,
     });

@@ -9,15 +9,16 @@ class DebianController extends Controller {
     for (const item in debianVersions) {
       names = names.concat(debianVersions[item].name);
     }
-    console.log(names);
     const validateRule = {
       ip: [ 'ipv4', 'ipv6' ],
       name: names,
     };
     let ip = this.ctx.query.ip;
     let name = this.ctx.query.version;
-    ip = (!ip) ? 'ipv4' : ip;
-    name = (!name) ? 'stretch' : name;
+    const defaultIP = this.app.config.mirror.ip;
+    const defaultVersion = this.app.config.mirror.debian;
+    ip = (!ip) ? defaultIP : ip;
+    name = (!name) ? defaultVersion : name;
     this.ctx.validate(validateRule, {
       ip,
       name,

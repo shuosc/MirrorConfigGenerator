@@ -15,8 +15,10 @@ class CentOSController extends Controller {
     };
     let ip = this.ctx.query.ip;
     let version = this.ctx.query.version;
-    ip = (!ip) ? 'ipv4' : ip; // set ipv4 to default
-    version = (!version) ? '7' : version; // set 7 to default
+    const defaultIP = this.app.config.mirror.ip;
+    const defaultVersion = this.app.config.mirror.centos;
+    ip = (!ip) ? defaultIP : ip;
+    version = (!version) ? defaultVersion : version;
     this.ctx.validate(validateRule, {
       ip,
       version,

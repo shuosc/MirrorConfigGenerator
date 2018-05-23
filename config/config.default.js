@@ -3,19 +3,19 @@
 module.exports = appInfo => {
   const config = {
     keys: appInfo.name + '_1522233899962_3056',
-    middleware: [],
+    middleware: [ 'baseURL' ],
+    baseURL: { url: '/repos' },
+    mirror: {
+      ip: 'ipv4',
+      ubuntu: '18.04',
+      centos: '7',
+      debian: 'stretch',
+    },
     security: {
       csrf: {
-        ignore: ctx => isInnerIp(ctx.ip),
+        enable: false,
       },
     },
   };
   return config;
 };
-
-function isInnerIp(ip) {
-  if (ip === '::1' || ip === '127.0.0.1') {
-    return true;
-  }
-  return false;
-}

@@ -13,10 +13,12 @@ class UbuntuController extends Controller {
       ip: [ 'ipv4', 'ipv6' ],
       version: versions,
     };
+    const defaultIP = this.app.config.mirror.ip;
+    const defaultVersion = this.app.config.mirror.ubuntu;
     let ip = this.ctx.query.ip;
     let version = this.ctx.query.version;
-    ip = (!ip) ? 'ipv4' : ip; // set ipv4 to default
-    version = (!version) ? '16.04' : version; // set 16.04 to default
+    ip = (!ip) ? defaultIP : ip; // set ipv4 to default
+    version = (!version) ? defaultVersion : version;
     this.ctx.validate(validateRule, {
       ip,
       version,
