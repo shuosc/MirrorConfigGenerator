@@ -194,7 +194,7 @@
                             if(this.ip == 'ipv4'){
                                 this.url = this.url;
                             }else{
-                                this.url = this.url + "&&ip=" + this.ip;
+                                this.url = this.url + "&ip=" + this.ip;
                             }
                         }
                     }
@@ -223,7 +223,7 @@
                             if(this.ip == 'ipv4'){
                                 this.oneurl = this.oneurl;
                             }else{
-                                this.oneurl += "&&ip=" + this.ip;
+                                this.oneurl += "&ip=" + this.ip;
                             }
                         }
 						this.oneurl += " | ";

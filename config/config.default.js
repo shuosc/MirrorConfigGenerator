@@ -6,16 +6,16 @@ module.exports = appInfo => {
   const config = {
     keys: appInfo.name + '_1522233899962_3056',
     middleware: [ 'baseURL' ],
-    baseURL: { url: '/repos' },
-    mirror: {
-      ip: 'ipv4'
+    baseURL: {
+      url: '/repos',
     },
-    view:{
+    view: {
       root: path.join(appInfo.baseDir, 'app/view'),
       defaultExtension: '.tpl',
       defaultViewEngine: 'nunjucks',
       mapping: {
-        '.nj':'nunjucks'
+        '.nj': 'nunjucks',
+        '.css': 'assets',
       },
     },
     security: {
@@ -25,17 +25,11 @@ module.exports = appInfo => {
     },
     static: {
       prefix: '/repos/',
-      dir: path.join(appInfo.baseDir, 'app/public')
+      dir: path.join(appInfo.baseDir, 'app/public'),
     },
     siteFile: {
-      '/favicon.ico': '/repos/img/favicon.ico'
-    }
+      '/favicon.ico': '/repos/img/favicon.ico',
+    },
   };
   return config;
-};
-
-exports.view = {
-  mapping: {
-    '.css': 'assets',
-  },
 };

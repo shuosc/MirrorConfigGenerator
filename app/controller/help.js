@@ -42,16 +42,16 @@ Please change the {ip} and {version} to your own settings.
   $ pacman -Syyu
 `;
 
+const config = require('../public/data/sources.json').isos;
+
 class HelpController extends Controller {
 
   async index() {
-    // const url = this.ctx.request.header.host + this.app.config.baseURL.url + this.ctx.request.url;
-    // console.log(url);
     indexHelp = indexHelp
-      .replace(/{defaultUbuntu}/, this.app.config.mirror.ubuntu)
-      .replace(/{defaultCentos}/, this.app.config.mirror.centos)
-      .replace(/{defaultDebian}/, this.app.config.mirror.debian)
-      .replace(/{defaultIP}/g, this.app.config.mirror.ip);
+      .replace(/{defaultUbuntu}/, config[0].children[0].value)
+      .replace(/{defaultCentos}/, config[1].children[0].value)
+      .replace(/{defaultDebian}/, config[2].children[0].value)
+      .replace(/{defaultIP}/g, 'ipv4');
     const body = logo + indexHelp;
     this.ctx.body = body;
   }
